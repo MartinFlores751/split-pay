@@ -1,2 +1,3 @@
-# split-pay
-An app to split up the fees of any charge.
+# Split-Pay
+
+A web app to help split the bill.
