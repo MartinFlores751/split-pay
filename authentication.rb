@@ -14,7 +14,7 @@ post "/process_login" do
 
 	user = User.first(email: email.downcase)
 
-	if(user && user.login(password))
+	if user && user.login(password)
 		session[:user_id] = user.id
 		redirect "/"
 	else
@@ -37,14 +37,18 @@ post "/register" do
 	password = params[:password]
 	repassword = params[:repassword]
 
-	u = User.new
-	u.email = email.downcase
-	u.password = password if password == repassword
-	u.save
+  if password == repassword
+		u = User.new
+		u.email = email.downcase
+		u.password = password
+		u.save
 
-	session[:user_id] = u.id
+		session[:user_id] = u.id
 
-	erb :"authentication/successful_signup"
+		erb :"authentication/successful_signup"
+  else
+    redirect "/login"
+  end
 
 end
 

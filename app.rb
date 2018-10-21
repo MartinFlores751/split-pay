@@ -1,5 +1,7 @@
 require "sinatra"
 require "plaid"
+require "date"
+require "json"
 require_relative "authentication.rb"
 
 
@@ -31,6 +33,11 @@ end
 get "/dashboard" do
 	authenticate!
 	erb :dashboard
+end
+
+get "/split" do
+  authenticate!
+  erb :split
 end
 
 # Exchange token flow - exchange a Link public_token for

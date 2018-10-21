@@ -10,14 +10,16 @@
 
   <button id="link-btn" class="btn btn-lg btn-primary text-uppercase">Connect with Plaid</button>
 
-  <p>Blah blah blah signed in stuff.</p>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-  <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
-  <script>
+  <div id="get-transactions-data"></div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+	<script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+	<script>
       (function($) {
           var handler = Plaid.create({
               apiVersion: 'v2',
-              clientName: 'Plaid Quickstart',
+              clientName: 'Split Pay',
               env: '<%= PLAID_ENV %>',
               product: ['transactions'],
               key: '<%= PLAID_PUBLIC_KEY %>',
