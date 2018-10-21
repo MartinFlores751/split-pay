@@ -1,5 +1,7 @@
 require "sinatra"
 require "plaid"
+require "date"
+require "json"
 require_relative "authentication.rb"
 
 
