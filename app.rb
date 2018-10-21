@@ -12,10 +12,15 @@ require_relative "authentication.rb"
 # if the user is signed in, current_user will refer to the signed in user object.
 # if they are not signed in, current_user will be nil
 
-client = Plaid::Client.new(env: ENV['PLAID_ENV'],
-                           client_id: ENV['PLAID_CLIENT_ID'],
-                           secret: ENV['PLAID_SECRET'],
-                           public_key: ENV['PLAID_PUBLIC_KEY'])
+PLAID_CLIENT_ID = "5bcb998644fc260011e05446"
+PLAID_SECRET = "10712950b9ca6fbd693a135fffc01e"
+PLAID_PUBLIC_KEY = "af0e71bca6e50bb68975df42767158"
+PLAID_ENV = "sandbox"
+
+client = Plaid::Client.new(env: PLAID_ENV,
+                           client_id: PLAID_CLIENT_ID,
+                           secret: PLAID_SECRET,
+                           public_key: PLAID_PUBLIC_KEY)
 
 access_token = nil
 
