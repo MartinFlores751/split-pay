@@ -1,8 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  <title></title>
+</head>
+<body>
 <div class="container">
-	<h1>Dashboard for <%= current_user.email %></h1>
+  <h1>Dashboard for <%= current_user.email %></h1>
 
-	<button id="link-btn" class="button button--is-primary">Connect with Plaid</button>
-
+  <button id="link-btn" class="btn btn-lg btn-primary text-uppercase">Connect with Plaid</button>
+  
   <div id="get-transactions-data"></div>
 
 
@@ -204,5 +211,7 @@
           var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
           return match && decodeURIComponent(match[1].replace(/\+/g, " "));
       }
-	</script>
+  </script>
 </div>
+</body>
+</html>
